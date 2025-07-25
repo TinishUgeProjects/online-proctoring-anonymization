@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proctoring Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Proctorex</h1>
+        <nav>
+            <ul>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="login" class="hidden">
+            <div class="form-container">
+                <div class="card">
+                    <h2>Login</h2>
+                    <button onclick="showLoginOptions()">Company Login</button>
+                    <button onclick="showLoginOptions()">Candidate Login</button>
+                </div>
+            </div>
+        </section>
+    
+        <section id="register" class="hidden">
+            <div class="form-container">
+                <div class="card">
+                    <h2>Register</h2>
+                    <form id="registerForm" action="/sign_up" method="POST">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+    
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+    
+                        <label for="phone">Phone No.:</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+    
+                        <label for="idNumber">ID Number (Aadhar, PAN):</label>
+                        <input type="text" id="idNumber" name="idNumber" required>
+    
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+    
+                        <button type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <div id="candidate-login-form" class="popup-form hidden">
+            <div class="form-container">
+                <div class="card">
+                    <h2>Candidate Login</h2>
+                    <form id="candidateLoginForm">
+                        <label for="candidateUsername">Username:</label>
+                        <input type="text" id="candidateUsername" name="candidateUsername" required>
+
+                        <label for="candidatePassword">Password:</label>
+                        <input type="password" id="candidatePassword" name="candidatePassword" required>
+
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Proctoring Website</p>
+    </footer>
+
+    <script src="script.js">   
+
+    function showCandidateLogin() {
+        const candidateLoginForm = document.getElementById('candidate-login-form');
+        candidateLoginForm.classList.remove('hidden');
+    }
+
+    function hideCandidateLogin() {
+        const candidateLoginForm = document.getElementById('candidate-login-form');
+        candidateLoginForm.classList.add('hidden');
+    }
+
+
+    </script>
+
+</body>
+</html>

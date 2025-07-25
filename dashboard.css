@@ -1,0 +1,70 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2a8af0;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: #2a8af0;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #007bff;
+}
+
+main {
+    padding: 20px;
+}
+
+.exam-table {
+    margin-top: 20px;
+}
+
+.exam-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.exam-table th, .exam-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.exam-table th {
+    background-color: #f2f2f2;
+}
+
+.exam-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.exam-table tbody tr:hover {
+    background-color: #e2e2e2;
+}

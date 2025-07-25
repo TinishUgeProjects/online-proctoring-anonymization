@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .login-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-options {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            width: 100%;
+            text-align: center;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .login-options h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .login-options div {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-options input[type="radio"] {
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .login-options button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-options button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <main class="login-main">
+        <section class="login-options">
+            <h2>Login Options</h2>
+            <div>
+                <input type="radio" id="candidate" name="loginType" value="candidate" checked>
+                <label for="candidate">Candidate Login</label>
+            </div>
+            <div>
+                <input type="radio" id="company" name="loginType" value="company">
+                <label for="company">Company Login</label>
+            </div>
+            <button onclick="redirectToLogin()">Continue</button>
+        </section>
+    </main>
+
+    <script>
+        function redirectToLogin() {
+            const candidateRadio = document.getElementById('candidate');
+            const companyRadio = document.getElementById('company');
+
+            if (candidateRadio.checked) {
+                window.location.href = 'candidate_login.html';
+            } else if (companyRadio.checked) {
+                window.location.href = 'company_login.html';
+            }
+        }
+    </script>
+</body>
+</html>
